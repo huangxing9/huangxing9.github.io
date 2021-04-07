@@ -158,6 +158,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-hive(1)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>下载hive ,下载位置：</p>
+<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/apache/hive/hive-3.1.2/">https://mirrors.tuna.tsinghua.edu.cn/apache/hive/hive-3.1.2/</a></p>
+<p>版本参考</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/oppo62258801/article/details/103871069?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-1-103871069.nonecase">hive与hadoop版本对应关系</a></p>
+<p>选择第一个apache-hive-3.1.2-bin.tar.gz</p>
+<p>然后解压到本地 /usr/local目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -zxvf [你的下载路径]  -C /usr/local</span><br></pre></td></tr></table></figure>
+
+<p>然后进入/usr/local目录，将文件重命名为hive</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local</span><br><span class="line">sudo mv apache-3.1.2-bin/ hive</span><br></pre></td></tr></table></figure>
+
+<p>为hive添加环境变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export HIVE_HOME=/usr/local/hive</span><br><span class="line">export PATH=$PATH:$HIVE_HOME/bin</span><br></pre></td></tr></table></figure>
+
+<p>添加完后可以输出看一下自己的环境变量结果</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH</span><br></pre></td></tr></table></figure>
+
+<p>然后查看hive是否安装成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hive --version</span><br></pre></td></tr></table></figure>
+
+<p>如果报错</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cannot find hadoop installation: $HADOOP_HOME or $HADOOP_PREFIX must be set or hadoop must be in the path</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>则需要修改hive的配置文件 </p>
+<p>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40564681/article/details/96976917?utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&dist_request_id=&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control">博客</a></p>
+<p>进入hive的conf目录,然后拷贝(拷贝是为了备份，保留初始的文件)配置文件，修改，并source使之生效</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/hive/conf</span><br><span class="line">sudo cp hive-env.sh.template hive-env.sh</span><br><span class="line">sudo vim hive-env.sh</span><br><span class="line"><span class="meta">#</span><span class="bash"> 然后在里面添加 hadoop_home</span></span><br><span class="line">export HADOOP_HOME=/usr/local/hadoop #你的hadoop路径</span><br><span class="line"><span class="meta">#</span><span class="bash">使之生效</span></span><br><span class="line">source hive-env.sh</span><br></pre></td></tr></table></figure>
+
+<p>再查看hive版本 成功</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/07/hive(1)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
